@@ -1,0 +1,28 @@
+[2023-07-19T15:05:55.816+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl.extract_postgresql_data manual__2023-07-19T15:05:54.563067+00:00 [queued]>
+[2023-07-19T15:05:55.824+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl.extract_postgresql_data manual__2023-07-19T15:05:54.563067+00:00 [queued]>
+[2023-07-19T15:05:55.825+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2023-07-19T15:05:55.842+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): extract_postgresql_data> on 2023-07-19 15:05:54.563067+00:00
+[2023-07-19T15:05:55.852+0000] {standard_task_runner.py:57} INFO - Started process 455 to run task
+[2023-07-19T15:05:55.856+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'etl', 'extract_postgresql_data', 'manual__2023-07-19T15:05:54.563067+00:00', '--job-id', '19', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmpc2q15eoi']
+[2023-07-19T15:05:55.865+0000] {standard_task_runner.py:85} INFO - Job 19: Subtask extract_postgresql_data
+[2023-07-19T15:05:55.943+0000] {task_command.py:410} INFO - Running <TaskInstance: etl.extract_postgresql_data manual__2023-07-19T15:05:54.563067+00:00 [running]> on host 6f676df8422e
+[2023-07-19T15:05:56.049+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Rodrigo Carvalho' AIRFLOW_CTX_DAG_ID='etl' AIRFLOW_CTX_TASK_ID='extract_postgresql_data' AIRFLOW_CTX_EXECUTION_DATE='2023-07-19T15:05:54.563067+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-07-19T15:05:54.563067+00:00'
+[2023-07-19T15:05:59.398+0000] {logging_mixin.py:150} INFO -       id_venda  id_funcionario  id_categoria  data_venda  venda
+0            1               1             1  2017-10-01  21636
+1            2               1             4  2018-05-12   3312
+2            3               1             3  2019-02-01  11778
+3            4               1             4  2019-03-11   2554
+4            5               1             3  2018-09-07   4425
+...        ...             ...           ...         ...    ...
+1012      1013               9             1  2017-02-08  10689
+1013      1014               9             3  2018-03-07  15056
+1014      1015               9             6  2019-06-03   3101
+1015      1016               9             4  2020-02-03    204
+1016      1017               9             7  2017-10-06   1275
+
+[1017 rows x 5 columns]
+[2023-07-19T15:05:59.710+0000] {logging_mixin.py:150} INFO - Load process completed!
+[2023-07-19T15:05:59.714+0000] {python.py:183} INFO - Done. Returned value was: None
+[2023-07-19T15:05:59.728+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=etl, task_id=extract_postgresql_data, execution_date=20230719T150554, start_date=20230719T150555, end_date=20230719T150559
+[2023-07-19T15:05:59.760+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-07-19T15:05:59.815+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

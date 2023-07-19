@@ -1,0 +1,28 @@
+[2023-07-19T15:06:18.113+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl.transform_data manual__2023-07-19T15:05:54.563067+00:00 [queued]>
+[2023-07-19T15:06:18.121+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl.transform_data manual__2023-07-19T15:05:54.563067+00:00 [queued]>
+[2023-07-19T15:06:18.122+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2023-07-19T15:06:18.136+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): transform_data> on 2023-07-19 15:05:54.563067+00:00
+[2023-07-19T15:06:18.143+0000] {standard_task_runner.py:57} INFO - Started process 484 to run task
+[2023-07-19T15:06:18.146+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'etl', 'transform_data', 'manual__2023-07-19T15:05:54.563067+00:00', '--job-id', '22', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmppekrgkph']
+[2023-07-19T15:06:18.148+0000] {standard_task_runner.py:85} INFO - Job 22: Subtask transform_data
+[2023-07-19T15:06:18.196+0000] {task_command.py:410} INFO - Running <TaskInstance: etl.transform_data manual__2023-07-19T15:05:54.563067+00:00 [running]> on host 6f676df8422e
+[2023-07-19T15:06:18.284+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Rodrigo Carvalho' AIRFLOW_CTX_DAG_ID='etl' AIRFLOW_CTX_TASK_ID='transform_data' AIRFLOW_CTX_EXECUTION_DATE='2023-07-19T15:05:54.563067+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-07-19T15:05:54.563067+00:00'
+[2023-07-19T15:06:18.321+0000] {logging_mixin.py:150} INFO -        sale_date         category     employee_name  total_sales
+0     2020-07-03     Mens Clothes        Leif Shine        35052
+1     2020-06-03     Mens Clothes       Rob Carsson       744246
+2     2020-06-01         Babywear      Helen Brolin       437212
+3     2020-06-01  Womens Footwear      Helen Brolin         5868
+4     2020-06-01      Womens wear  Lennart Skoglund      8443820
+...          ...              ...               ...          ...
+1000  2017-01-02         Babywear      Rock Rollman        36912
+1001  2017-01-02        Sportwear      Rock Rollman         4023
+1002  2017-01-01      Womens wear       Rob Carsson      1471842
+1003  2017-01-01        Sportwear       Rob Carsson        95445
+1004  2017-01-01         Babywear       Rob Carsson        74277
+
+[1005 rows x 4 columns]
+[2023-07-19T15:06:18.580+0000] {logging_mixin.py:150} INFO - Load process completed!
+[2023-07-19T15:06:18.581+0000] {python.py:183} INFO - Done. Returned value was: None
+[2023-07-19T15:06:18.591+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=etl, task_id=transform_data, execution_date=20230719T150554, start_date=20230719T150618, end_date=20230719T150618
+[2023-07-19T15:06:18.649+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-07-19T15:06:18.670+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

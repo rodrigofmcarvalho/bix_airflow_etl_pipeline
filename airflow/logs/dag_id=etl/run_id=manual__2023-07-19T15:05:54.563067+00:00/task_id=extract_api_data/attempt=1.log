@@ -1,0 +1,76 @@
+[2023-07-19T15:05:55.865+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl.extract_api_data manual__2023-07-19T15:05:54.563067+00:00 [queued]>
+[2023-07-19T15:05:55.877+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl.extract_api_data manual__2023-07-19T15:05:54.563067+00:00 [queued]>
+[2023-07-19T15:05:55.878+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2023-07-19T15:05:55.906+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): extract_api_data> on 2023-07-19 15:05:54.563067+00:00
+[2023-07-19T15:05:55.915+0000] {standard_task_runner.py:57} INFO - Started process 456 to run task
+[2023-07-19T15:05:55.923+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'etl', 'extract_api_data', 'manual__2023-07-19T15:05:54.563067+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmpw9_dc_d1']
+[2023-07-19T15:05:55.926+0000] {standard_task_runner.py:85} INFO - Job 20: Subtask extract_api_data
+[2023-07-19T15:05:55.998+0000] {task_command.py:410} INFO - Running <TaskInstance: etl.extract_api_data manual__2023-07-19T15:05:54.563067+00:00 [running]> on host 6f676df8422e
+[2023-07-19T15:05:56.088+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Rodrigo Carvalho' AIRFLOW_CTX_DAG_ID='etl' AIRFLOW_CTX_TASK_ID='extract_api_data' AIRFLOW_CTX_EXECUTION_DATE='2023-07-19T15:05:54.563067+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-07-19T15:05:54.563067+00:00'
+[2023-07-19T15:05:58.439+0000] {logging_mixin.py:150} INFO -    employee_id employee_name
+0            1   Rob Carsson
+[2023-07-19T15:05:58.452+0000] {logging_mixin.py:150} INFO - Load process completed!
+[2023-07-19T15:06:00.478+0000] {logging_mixin.py:150} INFO -    employee_id employee_name
+0            1   Rob Carsson
+1            2   Eli Preston
+[2023-07-19T15:06:00.504+0000] {logging_mixin.py:150} INFO - Load process completed!
+[2023-07-19T15:06:02.525+0000] {logging_mixin.py:150} INFO -    employee_id employee_name
+0            1   Rob Carsson
+1            2   Eli Preston
+2            3  Tom Lindwall
+[2023-07-19T15:06:02.540+0000] {logging_mixin.py:150} INFO - Load process completed!
+[2023-07-19T15:06:04.656+0000] {logging_mixin.py:150} INFO -    employee_id employee_name
+0            1   Rob Carsson
+1            2   Eli Preston
+2            3  Tom Lindwall
+3            4    Leif Shine
+[2023-07-19T15:06:04.676+0000] {logging_mixin.py:150} INFO - Load process completed!
+[2023-07-19T15:06:07.131+0000] {logging_mixin.py:150} INFO -    employee_id   employee_name
+0            1     Rob Carsson
+1            2     Eli Preston
+2            3    Tom Lindwall
+3            4      Leif Shine
+4            5  Ingrid Hendrix
+[2023-07-19T15:06:07.148+0000] {logging_mixin.py:150} INFO - Load process completed!
+[2023-07-19T15:06:09.551+0000] {logging_mixin.py:150} INFO -    employee_id     employee_name
+0            1       Rob Carsson
+1            2       Eli Preston
+2            3      Tom Lindwall
+3            4        Leif Shine
+4            5    Ingrid Hendrix
+5            6  Lennart Skoglund
+[2023-07-19T15:06:09.572+0000] {logging_mixin.py:150} INFO - Load process completed!
+[2023-07-19T15:06:11.742+0000] {logging_mixin.py:150} INFO -    employee_id     employee_name
+0            1       Rob Carsson
+1            2       Eli Preston
+2            3      Tom Lindwall
+3            4        Leif Shine
+4            5    Ingrid Hendrix
+5            6  Lennart Skoglund
+6            7      Rock Rollman
+[2023-07-19T15:06:11.756+0000] {logging_mixin.py:150} INFO - Load process completed!
+[2023-07-19T15:06:14.810+0000] {logging_mixin.py:150} INFO -    employee_id     employee_name
+0            1       Rob Carsson
+1            2       Eli Preston
+2            3      Tom Lindwall
+3            4        Leif Shine
+4            5    Ingrid Hendrix
+5            6  Lennart Skoglund
+6            7      Rock Rollman
+7            8      Helen Brolin
+[2023-07-19T15:06:14.825+0000] {logging_mixin.py:150} INFO - Load process completed!
+[2023-07-19T15:06:16.775+0000] {logging_mixin.py:150} INFO -    employee_id     employee_name
+0            1       Rob Carsson
+1            2       Eli Preston
+2            3      Tom Lindwall
+3            4        Leif Shine
+4            5    Ingrid Hendrix
+5            6  Lennart Skoglund
+6            7      Rock Rollman
+7            8      Helen Brolin
+8            9      Joan Callins
+[2023-07-19T15:06:16.981+0000] {logging_mixin.py:150} INFO - Load process completed!
+[2023-07-19T15:06:16.983+0000] {python.py:183} INFO - Done. Returned value was: None
+[2023-07-19T15:06:16.996+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=etl, task_id=extract_api_data, execution_date=20230719T150554, start_date=20230719T150555, end_date=20230719T150616
+[2023-07-19T15:06:17.062+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-07-19T15:06:17.085+0000] {taskinstance.py:2653} INFO - 1 downstream tasks scheduled from follow-on schedule check

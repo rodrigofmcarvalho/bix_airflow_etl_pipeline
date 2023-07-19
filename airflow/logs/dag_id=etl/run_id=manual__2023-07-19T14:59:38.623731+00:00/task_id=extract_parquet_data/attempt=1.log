@@ -1,0 +1,33 @@
+[2023-07-19T14:59:41.080+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl.extract_parquet_data manual__2023-07-19T14:59:38.623731+00:00 [queued]>
+[2023-07-19T14:59:41.093+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl.extract_parquet_data manual__2023-07-19T14:59:38.623731+00:00 [queued]>
+[2023-07-19T14:59:41.094+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2023-07-19T14:59:41.117+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): extract_parquet_data> on 2023-07-19 14:59:38.623731+00:00
+[2023-07-19T14:59:41.127+0000] {standard_task_runner.py:57} INFO - Started process 132 to run task
+[2023-07-19T14:59:41.147+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'etl', 'extract_parquet_data', 'manual__2023-07-19T14:59:38.623731+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmpq2q1dbqk']
+[2023-07-19T14:59:41.160+0000] {standard_task_runner.py:85} INFO - Job 7: Subtask extract_parquet_data
+[2023-07-19T14:59:41.322+0000] {task_command.py:410} INFO - Running <TaskInstance: etl.extract_parquet_data manual__2023-07-19T14:59:38.623731+00:00 [running]> on host 6f676df8422e
+[2023-07-19T14:59:41.437+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Rodrigo Carvalho' AIRFLOW_CTX_DAG_ID='etl' AIRFLOW_CTX_TASK_ID='extract_parquet_data' AIRFLOW_CTX_EXECUTION_DATE='2023-07-19T14:59:38.623731+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-07-19T14:59:38.623731+00:00'
+[2023-07-19T14:59:41.553+0000] {logging_mixin.py:150} INFO - An unexpected error has occured: Expected a path-like, list of path-likes or a list of Datasets instead of the given type: NoneType
+[2023-07-19T14:59:41.554+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/etl.py", line 133, in extract_parquet_data
+    df = pd.read_parquet(base_url)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parquet.py", line 500, in read_parquet
+    **kwargs,
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/io/parquet.py", line 240, in read
+    path_or_handle, columns=columns, **kwargs
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyarrow/parquet/core.py", line 2939, in read_table
+    thrift_container_size_limit=thrift_container_size_limit,
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyarrow/parquet/core.py", line 2480, in __init__
+    ignore_prefixes=ignore_prefixes)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyarrow/dataset.py", line 784, in dataset
+    'instead of the given type: {}'.format(type(source).__name__)
+TypeError: Expected a path-like, list of path-likes or a list of Datasets instead of the given type: NoneType
+[2023-07-19T14:59:41.582+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=etl, task_id=extract_parquet_data, execution_date=20230719T145938, start_date=20230719T145941, end_date=20230719T145941
+[2023-07-19T14:59:41.595+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 7 for task extract_parquet_data (Expected a path-like, list of path-likes or a list of Datasets instead of the given type: NoneType; 132)
+[2023-07-19T14:59:41.641+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-07-19T14:59:41.672+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check
