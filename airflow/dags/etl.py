@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 from sqlalchemy import create_engine, exc
 
 
-def load_env_variables():
+def load_env_variables() -> None:
     """
     Load environment variables from the.env file.
     """
@@ -19,7 +19,7 @@ def load_env_variables():
 
 
 # Define tasks(functions) to be executed
-def create_engine_source_db():
+def create_engine_source_db() -> create_engine:
     """
     Create engine to connect to source database.
     """
@@ -35,7 +35,7 @@ def create_engine_source_db():
     )
 
 
-def create_engine_target_db():
+def create_engine_target_db() -> create_engine:
     """
     Create engine to connect to target database.
     """
@@ -51,7 +51,7 @@ def create_engine_target_db():
     )
 
 
-def extract_postgresql_data():
+def extract_postgresql_data() -> None:
     """
     Extract data from PostgreSQL database.
     """
@@ -85,7 +85,7 @@ def extract_postgresql_data():
     load_data(target_table_name, df)
 
 
-def extract_api_data():
+def extract_api_data() -> None:
     """
     Extract data from API.
     """
@@ -121,7 +121,7 @@ def extract_api_data():
         load_data(target_table_name, df)
 
 
-def extract_parquet_data():
+def extract_parquet_data() -> None:
     """
     Extract data from a parquet file.
     """
@@ -139,7 +139,7 @@ def extract_parquet_data():
     load_data(target_table_name, df)
 
 
-def transform_data():
+def transform_data() -> None:
     """
     Transform data and load into the target database.
     """
@@ -174,7 +174,7 @@ def transform_data():
     load_data(target_table_name, df)
 
 
-def load_data(table_name: str, df: pd.DataFrame):
+def load_data(table_name: str, df: pd.DataFrame) -> None:
     """
     Load data into the target database.
     """
